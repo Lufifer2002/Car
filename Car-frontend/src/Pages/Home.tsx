@@ -1,15 +1,14 @@
-import Header from "../Component/header";
+
 import herooo from "../assets/herooo.png";
-import Footer from "../Component/Footer";
 import second from "../assets/second.png";
+import third from "../assets/third.png";
 function Home() {
     return (
         <div className="bg-[#020202] min-h-screen text-white p-4 md:p-6">
             {/* Main Container (NO BORDER) */}
             <div className="relative overflow-hidden rounded-[30px] bg-black shadow-[0_0_80px_rgba(255,255,255,0.03)]">
 
-                {/* Header */}
-                <Header />
+
 
                 {/* Hero Section */}
                 <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
@@ -113,7 +112,8 @@ function Home() {
                             <h3 className="relative z-20 text-white text-4xl md:text-6xl font-bold mb-2 text-center">
                                 Our Story
                             </h3>
-                            <div className="relative z-20 mt-10 w-full max-w-4xl mx-auto h-[500px] overflow-hidden">
+                            <div className="relative z-20 w-full max-w-4xl mx-auto h-[500px] overflow-hidden">
+
                                 <img
                                     src={second}
                                     alt="Crafting the Future of Luxury"
@@ -122,50 +122,100 @@ function Home() {
 
 
                                 {/* Overlay Container */}
-                                <div className="absolute inset-0 z-30 flex items-end justify-start pb-10 px-6 gap-4 flex-wrap">
+                                <div className="absolute bottom-10 left-0 right-0 z-30">
+                                    <div className="flex justify-center items-end gap-6">
 
-                                    {/* Card 1 */}
-                                    <div className="bg-black/40 backdrop-blur-md p-6 rounded-2xl text-center w-40 md:w-52">
-                                        <h2 className="text-3xl md:text-4xl font-bold">15+</h2>
-                                        <p className="text-xs md:text-sm text-gray-300 mt-2">
-                                            Global Presence
-                                        </p>
+                                        {/* Card 1 */}
+                                        <div className="bg-gray-900/30  border border-white/10 rounded-2xl w-40 md:w-52 h-52 flex flex-col items-center justify-center">
+                                            <h2 className="text-3xl md:text-4xl font-bold">15+</h2>
+                                            <p className="text-xs md:text-sm text-gray-300 mt-2 text-center">
+                                                Global Presence
+                                            </p>
+                                        </div>
+
+                                        {/* Card 2 - Lower */}
+                                        <div className="bg-gray-900/30 border border-white/10 rounded-2xl w-40 md:w-52 h-52 flex flex-col items-center justify-center translate-y-10">
+                                            <h2 className="text-3xl md:text-4xl font-bold">120+</h2>
+                                            <p className="text-xs md:text-sm text-gray-300 mt-2 text-center">
+                                                Global Dealers
+                                            </p>
+                                        </div>
+                                        {/*Gap*/}
+                                        <div className="flex justify-center items-end gap-6">
+                                            <div className="mr-8"></div>
+                                        </div>
+
+                                        {/* Card 3 - Lower */}
+                                        <div className="bg-gray-900/30  border border-white/10 rounded-2xl w-40 md:w-52 h-52 flex flex-col items-center justify-center translate-y-10">
+                                            <h2 className="text-3xl md:text-4xl font-bold">15+</h2>
+                                            <p className="text-xs md:text-sm text-gray-300 mt-2 text-center">
+                                                Years Experience
+                                            </p>
+                                        </div>
+
+                                        {/* Card 4 */}
+                                        <div className="bg-gray-900/30  border border-white/10 rounded-2xl w-40 md:w-52 h-52 flex flex-col items-center justify-center">
+                                            <h2 className="text-3xl md:text-4xl font-bold">98%</h2>
+                                            <p className="text-xs md:text-sm text-gray-300 mt-2 text-center">
+                                                Customer Satisfaction
+                                            </p>
+                                        </div>
+
                                     </div>
-
-                                    {/* Card 2 */}
-                                    <div className="bg-black/40 backdrop-blur-md p-6 rounded-2xl text-center w-40 md:w-52">
-                                        <h2 className="text-3xl md:text-4xl font-bold">120+</h2>
-                                        <p className="text-xs md:text-sm text-gray-300 mt-2">
-                                            Global Dealers
-                                        </p>
-                                    </div>
-
-                                    {/* Card 3 */}
-                                    <div className="bg-black/40 backdrop-blur-md p-6 rounded-2xl text-center w-40 md:w-52">
-                                        <h2 className="text-3xl md:text-4xl font-bold">15+</h2>
-                                        <p className="text-xs md:text-sm text-gray-300 mt-2">
-                                            Years Experience
-                                        </p>
-                                    </div>
-
-                                    {/* Card 4 */}
-                                    <div className="bg-black/40 backdrop-blur-md p-6 rounded-2xl text-center w-40 md:w-52">
-                                        <h2 className="text-3xl md:text-4xl font-bold">98%</h2>
-                                        <p className="text-xs md:text-sm text-gray-300 mt-2">
-                                            Customer Satisfaction
-                                        </p>
-                                    </div>
-
-                                </div>
+                                </div>                            
                             </div>
                         </div>
-
-
-
                     </section>
-                </div>
-                {/* Footer */}
-                <Footer />
+ <div className="relative">
+  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none z-10" />
+
+  <section className="relative z-20 pb-20 px-6">
+    <div className="flex w-full gap-10">
+
+      {/* LEFT SIDE — Image */}
+      <div className="flex-2 text-left">
+        <img
+          src={third}
+          alt="Crafting the Future of Luxury"
+          className="w-full h-[400px] object-cover object-bottom opacity-80 rounded-2xl"
+        />
+      </div>
+
+      {/* RIGHT SIDE — Mission Content */}
+      <div className="flex-1 flex flex-col justify-center relative px-4">
+        {/* Gold left border accent */}
+        <div className="absolute left-0 top-[10%] bottom-[10%] w-px bg-gradient-to-b from-transparent via-[#b8975a]/40 to-transparent" />
+
+        
+
+        {/* Headline */}
+        <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-2">
+          Unmatched Luxury
+          <br />
+          <span className="text-white">Performance</span>
+        </h2>
+
+        {/* Sub-headline */}
+        <p className="text-sm font-light tracking-wide text-gray-400 mb-6">
+          and Exceptional Experiences
+        </p>
+
+        
+        {/* Body */}
+        <p className="text-xs md:text-sm leading-6 text-gray-400 max-w-sm">
+          To deliver a premium, transparent car trading experience that exceeds
+          expectations. We believe luxury is not an option — it&apos;s a{" "}
+          <span className="text-gray-300">standard</span>. Every interaction,
+          every vehicle, and every transaction reflects our commitment to
+          excellence.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</div>
+</div>
+
             </div>
         </div>
     );
