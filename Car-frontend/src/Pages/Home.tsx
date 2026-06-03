@@ -2,6 +2,10 @@
 import herooo from "../assets/herooo.png";
 import second from "../assets/second.png";
 import third from "../assets/third.png";
+import fourth from "../assets/fourth.png";
+import fifth from "../assets/fifth.png";
+import { Link } from "react-router-dom";
+import { MdArrowOutward } from "react-icons/md";
 function Home() {
     return (
         <div className="bg-[#020202] min-h-screen text-white p-4 md:p-6">
@@ -219,27 +223,57 @@ function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none z-10" />
 
                     <section className="relative z-20 pb-20 px-6">
-                        <div className="flex w-full gap-10">
-                            {/* LEFT SIDE */}
-                            <div className="flex-1 text-left">
-                                <h4 className="text-4xl md:text-6xl font-bold mb-2 text-white">
-                                    Shaping the Future of <br />
+                        <div className="flex items-start justify-between gap-20">
+                            {/* Left */}
+                            <div className="w-3/5">
+                                <h3 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+                                    Shaping the Future of
+                                    <br />
                                     Automotive Luxury
-                                </h4>
+                                </h3>
                             </div>
-                            
-                            <div className="flex-3 flex justify-end">
-                                <div className="flex w-full gap-10">
-                                    <p className="text-gray-400 text-xs md:text-sm leading-5 mb-1 text-justify">
-                                        To 
-                                    </p>    
+
+                            {/* Right */}
+                            <div className="w-2/5">
+                                <p className="text-gray-300 text-base leading-7">
+                                    To redefine premium car buying in the digital age. We envision a future
+                                    where acquiring a luxury vehicle is as smooth and sophisticated as the
+                                    cars we offer, setting new standards in the automotive industry.
+                                </p>
+                            </div>
                         </div>
-                        </div>
+                        <div className="w-[95%] max-w-7xl h-[500px] overflow-hidden mx-auto mt-20 border border-white/10 rounded-3xl">
+                            <img
+                                src={fourth}
+                                alt="Crafting the Future of Luxury"
+                                className="w-[100%] h-[100%] object-cover opacity-70 "
+                            />
                         </div>
                     </section>
                 </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none z-10" />
+                <div className="relative z-20 pb-20 px-6 text-center">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-6">
+                        Drive Beyond Expectaion
+                    </h2>
+                    <p className="max-w-3xl mx-auto text-gray-400 leading-8 text-sm md:text-base">
+                        Embrace the art of refined performance.Let LuxeAuto guide you to your perfect
+                        <p>car-with world-class service and unmatched sophistication.</p>
+                    </p>
 
-
+                    <Link to="/Inventory">
+                        <button className="bg-yellow-500 text-black hover:bg-gray-200 font-bold py-2 px-4 border border-gray-300 rounded-3xl mt-6 inline-flex items-center gap-2 transition-colors duration-300">
+                            Browse Cars <MdArrowOutward />
+                        </button>
+                    </Link>
+                    <div className="w-[95%] max-w-8xl h-[500px] overflow-hidden mx-auto mt-20 border border-white/10 rounded-3xl">
+                        <img
+                            src={fifth}
+                            alt="Crafting the Future of Luxury"
+                            className="w-full h-full object-cover object-[50%_80%] opacity-70"
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );
