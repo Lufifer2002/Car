@@ -162,59 +162,83 @@ function Home() {
                                         </div>
 
                                     </div>
-                                </div>                            
+                                </div>
                             </div>
                         </div>
                     </section>
- <div className="relative">
-  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none z-10" />
+                    <div className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none z-10" />
 
-  <section className="relative z-20 pb-20 px-6">
-    <div className="flex w-full gap-10">
+                        <section className="relative z-20 pb-20 px-6">
+                            <div className="flex w-full gap-10">
 
-      {/* LEFT SIDE — Image */}
-      <div className="flex-2 text-left">
-        <img
-          src={third}
-          alt="Crafting the Future of Luxury"
-          className="w-full h-[400px] object-cover object-bottom opacity-80 rounded-2xl"
-        />
-      </div>
+                                {/* LEFT SIDE — Image */}
+                                <div className="flex-2 text-left">
+                                    <img
+                                        src={third}
+                                        alt="Crafting the Future of Luxury"
+                                        className="w-full h-[400px] object-cover object-bottom opacity-80 rounded-2xl"
+                                    />
+                                </div>
 
-      {/* RIGHT SIDE — Mission Content */}
-      <div className="flex-1 flex flex-col justify-center relative px-4">
-        {/* Gold left border accent */}
-        <div className="absolute left-0 top-[10%] bottom-[10%] w-px bg-gradient-to-b from-transparent via-[#b8975a]/40 to-transparent" />
+                                {/* RIGHT SIDE — Mission Content */}
+                                <div className="flex-1 flex flex-col justify-center relative px-4">
+                                    {/* Gold left border accent */}
+                                    <div className="absolute left-0 top-[10%] bottom-[10%] w-px bg-gradient-to-b from-transparent via-[#b8975a]/40 to-transparent" />
 
-        
 
-        {/* Headline */}
-        <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-2">
-          Unmatched Luxury
-          <br />
-          <span className="text-white">Performance</span>
-        </h2>
 
-        {/* Sub-headline */}
-        <p className="text-sm font-light tracking-wide text-gray-400 mb-6">
-          and Exceptional Experiences
-        </p>
+                                    {/* Headline */}
+                                    <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-2">
+                                        Deliver Unmatched Luxury
+                                        <br />
+                                        <span className="text-white">Performance</span>
+                                    </h2>
 
-        
-        {/* Body */}
-        <p className="text-xs md:text-sm leading-6 text-gray-400 max-w-sm">
-          To deliver a premium, transparent car trading experience that exceeds
-          expectations. We believe luxury is not an option — it&apos;s a{" "}
-          <span className="text-gray-300">standard</span>. Every interaction,
-          every vehicle, and every transaction reflects our commitment to
-          excellence.
-        </p>
-      </div>
+                                    {/* Sub-headline */}
+                                    <h2 className="text-2xl md:text-5xl font-bold leading-tight text-white mb-2">
+                                        and Exceptional Experiences
+                                    </h2>
 
-    </div>
-  </section>
-</div>
-</div>
+
+                                    {/* Body */}
+                                    <p>experience that exceeds
+                                        expectations. We believe luxury is not an option — it&apos;s a{" "}
+                                        standard. Every interaction,
+                                        every vehicle, and every transaction reflects our commitment to
+                                        excellence.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                {/* Crafting Section */}
+                <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none z-10" />
+
+                    <section className="relative z-20 pb-20 px-6">
+                        <div className="flex w-full gap-10">
+                            {/* LEFT SIDE */}
+                            <div className="flex-1 text-left">
+                                <h4 className="text-4xl md:text-6xl font-bold mb-2 text-white">
+                                    Shaping the Future of <br />
+                                    Automotive Luxury
+                                </h4>
+                            </div>
+                            
+                            <div className="flex-3 flex justify-end">
+                                <div className="flex w-full gap-10">
+                                    <p className="text-gray-400 text-xs md:text-sm leading-5 mb-1 text-justify">
+                                        To 
+                                    </p>    
+                        </div>
+                        </div>
+                        </div>
+                    </section>
+                </div>
+
 
             </div>
         </div>
