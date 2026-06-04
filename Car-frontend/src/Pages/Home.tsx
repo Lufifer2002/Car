@@ -3,6 +3,7 @@ import Section_1 from "../Component/Home/Section_1";
 import Section_2 from "../Component/Home/Section_2";
 import Section_3 from "../Component/Home/Section_3";
 import Section_4 from "../Component/Home/Section_4";
+
 function Home() {
     return (
                 <div className="bg-[#020202] min-h-screen text-white p-4 md:p-6">
