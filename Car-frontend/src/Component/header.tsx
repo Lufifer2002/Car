@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { FaUserCircle } from "react-icons/fa";
-import Signin from "../Component/Authentication/Signin";
 interface NavItem {
   label: string;
   href: string;
