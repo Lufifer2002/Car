@@ -6,6 +6,7 @@ import Navbar from './Component/header';
 import Signin from "./Component/Authentication/Signin";
 import Signup from "./Component/Authentication/Signup";
 import Inventory from './Pages/Inventory';
+import About from './Pages/About';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/about" element={<About/>} />
       </Routes>
       <LuxAutoFooter />
   </>

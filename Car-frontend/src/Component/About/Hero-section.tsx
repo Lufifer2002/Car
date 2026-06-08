@@ -1,4 +1,3 @@
-
 import herooo from '../../assets/herooo.png';
 const Hero_section = () => {
   return (

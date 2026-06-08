@@ -1,6 +1,6 @@
 import { useState } from "react";
 import InventoryCard from "../Component/Inventory/InventoryCard";
-import {cars} from "../data/Cardata";
+import {cars} from "../data/InventoryCarddata";
 
 const Inventory = () => {
   const [search, setSearch] = useState("");

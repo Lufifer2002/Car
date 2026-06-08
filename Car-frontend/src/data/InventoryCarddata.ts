@@ -28,7 +28,7 @@ export const cars: Car[] = [
   },
   {
     id: 2,
-    name: "BMW 7 Series",
+    name: "Pagani'009",
     year: 2024,
     price: "$118,000",
     mileage: "1,800 km",
@@ -36,7 +36,7 @@ export const cars: Car[] = [
   },
   {
     id: 3,
-    name: "Audi A8",
+    name: "BMW-07",
     year: 2024,
     price: "$110,000",
     mileage: "3,200 km",
@@ -52,7 +52,7 @@ export const cars: Car[] = [
   },
    {
     id:5,
-    name: "Audi ",
+    name: "Huracan ",
     year: 2024,
     price: "$110,000",
     mileage: "3,200 km",
@@ -68,7 +68,7 @@ export const cars: Car[] = [
   },
    {
     id: 7,
-    name: "Audi A8",
+    name: "Lamborghini Dirty Yellow",
     year: 2024,
     price: "$110,000",
     mileage: "3,200 km",
@@ -76,7 +76,7 @@ export const cars: Car[] = [
   },
    {
     id: 8,
-    name: "Audi A8",
+    name: "Mercedes-Benz Z-class",
     year: 2024,
     price: "$110,000",
     mileage: "3,200 km",
