@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
+import { useAuth } from './AuthContext';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +10,10 @@ const Signup = () => {
     password: '',
     confirmPassword: '',
   });
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const { signup } = useAuth();
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -18,15 +24,28 @@ const Signup = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError('');
+    setSuccess('');
 
     if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match');
+      setError('Passwords do not match. Please try again.');
       return;
     }
 
-    console.log(formData);
+    if (formData.password.length < 6) {
+      setError('Password must be at least 6 characters long.');
+      return;
+    }
 
-    // API call goes here
+    const result = signup(formData.fullName, formData.email, formData.password);
+
+    if (!result.success) {
+      setError(result.message);
+      return;
+    }
+
+    setSuccess(result.message);
+    setTimeout(() => navigate('/signin'), 1500);
   };
 
   return (
@@ -42,6 +61,18 @@ const Signup = () => {
               Join LuxAuto today
             </p>
           </div>
+
+          {error && (
+            <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-300 text-sm">
+              {error}
+            </div>
+          )}
+
+          {success && (
+            <div className="mb-4 p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-300 text-sm">
+              {success}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Full Name */}
@@ -138,12 +169,12 @@ const Signup = () => {
 
           <p className="text-center text-white/60 text-sm mt-6">
             Already have an account?{' '}
-            <a
-              href="/signin"
+            <NavLink
+              to="/signin"
               className="text-white hover:underline"
             >
               Sign In
-            </a>
+            </NavLink>
           </p>
         </div>
       </div>

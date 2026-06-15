@@ -1,18 +1,30 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
+import { useAuth } from './AuthContext';
 
 const Signin = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    const { login } = useAuth();
+    const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setError('');
+        setSuccess('');
 
-        console.log({
-            email,
-            password,
-        });
+        const result = login(email, password);
+
+        if (!result.success) {
+            setError(result.message);
+            return;
+        }
+
+        setSuccess(result.message);
+        setTimeout(() => navigate('/'), 1000);
     };
 
     return (
@@ -28,6 +40,18 @@ const Signin = () => {
                             Sign in to your LuxAuto account
                         </p>
                     </div>
+
+                    {error && (
+                        <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-300 text-sm">
+                            {error}
+                        </div>
+                    )}
+
+                    {success && (
+                        <div className="mb-4 p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-300 text-sm">
+                            {success}
+                        </div>
+                    )}
 
                     <form onSubmit={handleSubmit} className="space-y-5">
                         <div>

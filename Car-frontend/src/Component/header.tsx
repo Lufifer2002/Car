@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
-import { FaUserCircle } from "react-icons/fa";
+import { FaUserCircle, FaSignOutAlt } from "react-icons/fa";
+import { useAuth } from './Authentication/AuthContext';
 interface NavItem {
   label: string;
   href: string;
@@ -17,6 +18,7 @@ const navItems: NavItem[] = [
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const { currentUser, logout } = useAuth();
 
   return (
     <nav className="relative w-full bg-black px-6 py-4">
@@ -55,22 +57,37 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Sign In */}
+        {/* Sign In / User Info */}
         <div className="hidden md:flex items-center">
-          <NavLink
-            to="/signin"
-            className={({ isActive }) =>
-              `inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200 ${isActive
-                ? 'text-white'
-                : 'text-white/70 hover:text-white'
-              }`
-            }
-          >
-            <button className="border-gray-500 border px-3 py-1 rounded-md flex items-center gap-1">
-              <FaUserCircle className="text-lg" />
-              Sign in
-            </button>
-          </NavLink>
+          {currentUser ? (
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-white/80">
+                Hi, <span className="text-white font-medium">{currentUser.fullName.split(' ')[0]}</span>
+              </span>
+              <button
+                onClick={logout}
+                className="border-gray-500 border px-3 py-1 rounded-md flex items-center gap-1 text-white/70 hover:text-white transition-colors"
+              >
+                <FaSignOutAlt className="text-lg" />
+                Sign out
+              </button>
+            </div>
+          ) : (
+            <NavLink
+              to="/signin"
+              className={({ isActive }) =>
+                `inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200 ${isActive
+                  ? 'text-white'
+                  : 'text-white/70 hover:text-white'
+                }`
+              }
+            >
+              <button className="border-gray-500 border px-3 py-1 rounded-md flex items-center gap-1">
+                <FaUserCircle className="text-lg" />
+                Sign in
+              </button>
+            </NavLink>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -103,19 +120,33 @@ const Navbar: React.FC = () => {
             </NavLink>
           ))}
 
-          <NavLink
-            to="/signin"
-            onClick={() => setOpen(false)}
-            className={({ isActive }) =>
-              `text-sm font-medium ${isActive
-                ? 'text-white'
-                : 'text-white/70 hover:text-white'
-              }`
-            }
-          >
-            Sign in
-            
-          </NavLink>
+          {currentUser ? (
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-white/80">
+                Hi, <span className="text-white font-medium">{currentUser.fullName.split(' ')[0]}</span>
+              </span>
+              <button
+                onClick={() => { logout(); setOpen(false); }}
+                className="text-sm text-white/70 hover:text-white flex items-center gap-1"
+              >
+                <FaSignOutAlt />
+                Sign out
+              </button>
+            </div>
+          ) : (
+            <NavLink
+              to="/signin"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `text-sm font-medium ${isActive
+                  ? 'text-white'
+                  : 'text-white/70 hover:text-white'
+                }`
+              }
+            >
+              Sign in
+            </NavLink>
+          )}
         </div>
       )}
 

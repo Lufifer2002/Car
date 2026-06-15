@@ -7,10 +7,13 @@ import Signin from "./Component/Authentication/Signin";
 import Signup from "./Component/Authentication/Signup";
 import Inventory from './Pages/Inventory';
 import About from './Pages/About';
+import Services from './Pages/Services';
+import Contact from './Pages/Contact';
+import { AuthProvider } from './Component/Authentication/AuthContext';
 
 function App() {
   return (
-  <>
+  <AuthProvider>
     
       <Navbar />
       <Routes>
@@ -19,9 +22,11 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/about" element={<About/>} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <LuxAutoFooter />
-  </>
+  </AuthProvider>
   
   );
 }
