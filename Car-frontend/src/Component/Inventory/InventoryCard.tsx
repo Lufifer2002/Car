@@ -1,4 +1,6 @@
+import { NavLink } from "react-router-dom";
 interface Car {
+  id: number;
   image: string;
   name: string;
   year: string;
@@ -33,9 +35,11 @@ const InventoryCard = ({ car }: InventoryCardProps) => {
           {car.price}
         </div>
 
-        <button className="mt-4 w-full bg-white text-black py-2 rounded-lg font-medium">
-          View Details
-        </button>
+        <NavLink to={`/cardetails/${car.id}`}>
+          <button className="mt-4 w-full bg-white text-black py-2 rounded-lg font-medium">
+            View Details
+          </button>
+        </NavLink>
       </div>
     </div>
   );
